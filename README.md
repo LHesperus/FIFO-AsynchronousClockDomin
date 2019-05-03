@@ -9,5 +9,5 @@ FIFO的第一个数据会读成0
 对TS_IN采样，后来解决了这个bug。
 
 ## ASMD框图 <br>
-![Image text](https://github.com/LHesperus/FIFO-AsynchronousClockDomin/blob/master/message/ASMD.jpg)
+![Image text](https://github.com/LHesperus/FIFO-AsynchronousClockDomin/blob/master/message/ASMD.png)
 
