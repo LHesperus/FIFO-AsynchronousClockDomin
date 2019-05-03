@@ -1,0 +1,628 @@
+Analysis & Synthesis report for TS_CONTROL
+Fri May 03 23:26:27 2019
+Quartus II 64-Bit Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |TS_CONTROL|state
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for FIFO_2clk:Buffer|dcfifo:dcfifo_component
+ 16. Source assignments for FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated
+ 17. Source assignments for FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|a_graycounter_on6:rdptr_g1p
+ 18. Source assignments for FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|a_graycounter_k5c:wrptr_g1p
+ 19. Source assignments for FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|altsyncram_nou:fifo_ram
+ 20. Source assignments for FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|alt_synch_pipe_06d:rs_dgwp
+ 21. Source assignments for FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|alt_synch_pipe_06d:rs_dgwp|dffpipe_vu8:dffpipe12
+ 22. Source assignments for FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|dffpipe_uu8:ws_brp
+ 23. Source assignments for FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|dffpipe_uu8:ws_bwp
+ 24. Source assignments for FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|alt_synch_pipe_16d:ws_dgrp
+ 25. Source assignments for FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|alt_synch_pipe_16d:ws_dgrp|dffpipe_0v8:dffpipe16
+ 26. Parameter Settings for User Entity Instance: Top-level Entity: |TS_CONTROL
+ 27. Parameter Settings for User Entity Instance: FIFO_2clk:Buffer|dcfifo:dcfifo_component
+ 28. dcfifo Parameter Settings by Entity Instance
+ 29. Port Connectivity Checks: "FIFO_2clk:Buffer"
+ 30. Elapsed Time Per Partition
+ 31. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri May 03 23:26:27 2019          ;
+; Quartus II 64-Bit Version          ; 11.0 Build 208 07/03/2011 SP 1 SJ Full Version ;
+; Revision Name                      ; TS_CONTROL                                     ;
+; Top-level Entity Name              ; TS_CONTROL                                     ;
+; Family                             ; Cyclone IV E                                   ;
+; Total logic elements               ; 143                                            ;
+;     Total combinational functions  ; 87                                             ;
+;     Dedicated logic registers      ; 106                                            ;
+; Total registers                    ; 106                                            ;
+; Total pins                         ; 29                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 256                                            ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE6F17C8        ;                    ;
+; Top-level entity name                                                      ; TS_CONTROL         ; TS_CONTROL         ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2 processors           ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                 ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                       ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+
+; FIFO_2clk.v                      ; yes             ; User Wizard-Generated File   ; C:/Users/LCG/Desktop/FPGA/FIFO_2clk.v                              ;
+; ts_control.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/LCG/Desktop/FPGA/ts_control.v                             ;
+; dcfifo.tdf                       ; yes             ; Megafunction                 ; d:/altera/11.0/quartus/libraries/megafunctions/dcfifo.tdf          ;
+; lpm_counter.inc                  ; yes             ; Megafunction                 ; d:/altera/11.0/quartus/libraries/megafunctions/lpm_counter.inc     ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; d:/altera/11.0/quartus/libraries/megafunctions/lpm_add_sub.inc     ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; d:/altera/11.0/quartus/libraries/megafunctions/altdpram.inc        ;
+; a_graycounter.inc                ; yes             ; Megafunction                 ; d:/altera/11.0/quartus/libraries/megafunctions/a_graycounter.inc   ;
+; a_fefifo.inc                     ; yes             ; Megafunction                 ; d:/altera/11.0/quartus/libraries/megafunctions/a_fefifo.inc        ;
+; a_gray2bin.inc                   ; yes             ; Megafunction                 ; d:/altera/11.0/quartus/libraries/megafunctions/a_gray2bin.inc      ;
+; dffpipe.inc                      ; yes             ; Megafunction                 ; d:/altera/11.0/quartus/libraries/megafunctions/dffpipe.inc         ;
+; alt_sync_fifo.inc                ; yes             ; Megafunction                 ; d:/altera/11.0/quartus/libraries/megafunctions/alt_sync_fifo.inc   ;
+; lpm_compare.inc                  ; yes             ; Megafunction                 ; d:/altera/11.0/quartus/libraries/megafunctions/lpm_compare.inc     ;
+; altsyncram_fifo.inc              ; yes             ; Megafunction                 ; d:/altera/11.0/quartus/libraries/megafunctions/altsyncram_fifo.inc ;
+; aglobal110.inc                   ; yes             ; Megafunction                 ; d:/altera/11.0/quartus/libraries/megafunctions/aglobal110.inc      ;
+; db/dcfifo_5ag1.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/LCG/Desktop/FPGA/db/dcfifo_5ag1.tdf                       ;
+; db/a_gray2bin_rgb.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/LCG/Desktop/FPGA/db/a_gray2bin_rgb.tdf                    ;
+; db/a_graycounter_on6.tdf         ; yes             ; Auto-Generated Megafunction  ; C:/Users/LCG/Desktop/FPGA/db/a_graycounter_on6.tdf                 ;
+; db/a_graycounter_k5c.tdf         ; yes             ; Auto-Generated Megafunction  ; C:/Users/LCG/Desktop/FPGA/db/a_graycounter_k5c.tdf                 ;
+; db/altsyncram_nou.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/LCG/Desktop/FPGA/db/altsyncram_nou.tdf                    ;
+; db/alt_synch_pipe_06d.tdf        ; yes             ; Auto-Generated Megafunction  ; C:/Users/LCG/Desktop/FPGA/db/alt_synch_pipe_06d.tdf                ;
+; db/dffpipe_vu8.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/LCG/Desktop/FPGA/db/dffpipe_vu8.tdf                       ;
+; db/dffpipe_uu8.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/LCG/Desktop/FPGA/db/dffpipe_uu8.tdf                       ;
+; db/alt_synch_pipe_16d.tdf        ; yes             ; Auto-Generated Megafunction  ; C:/Users/LCG/Desktop/FPGA/db/alt_synch_pipe_16d.tdf                ;
+; db/dffpipe_0v8.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/LCG/Desktop/FPGA/db/dffpipe_0v8.tdf                       ;
+; db/cmpr_c66.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/LCG/Desktop/FPGA/db/cmpr_c66.tdf                          ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 143       ;
+;                                             ;           ;
+; Total combinational functions               ; 87        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 42        ;
+;     -- 3 input functions                    ; 22        ;
+;     -- <=2 input functions                  ; 23        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 80        ;
+;     -- arithmetic mode                      ; 7         ;
+;                                             ;           ;
+; Total registers                             ; 106       ;
+;     -- Dedicated logic registers            ; 106       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 29        ;
+; Total memory bits                           ; 256       ;
+; Maximum fan-out node                        ; CLK~input ;
+; Maximum fan-out                             ; 63        ;
+; Total fan-out                               ; 677       ;
+; Average fan-out                             ; 2.61      ;
++---------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                         ;
++-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                              ; Library Name ;
++-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |TS_CONTROL                                   ; 87 (39)           ; 106 (36)     ; 256         ; 0            ; 0       ; 0         ; 29   ; 0            ; |TS_CONTROL                                                                                                                      ;              ;
+;    |FIFO_2clk:Buffer|                         ; 48 (0)            ; 70 (0)       ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |TS_CONTROL|FIFO_2clk:Buffer                                                                                                     ;              ;
+;       |dcfifo:dcfifo_component|               ; 48 (0)            ; 70 (0)       ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component                                                                             ;              ;
+;          |dcfifo_5ag1:auto_generated|         ; 48 (10)           ; 70 (18)      ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated                                                  ;              ;
+;             |a_gray2bin_rgb:wrptr_g_gray2bin| ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|a_gray2bin_rgb:wrptr_g_gray2bin                  ;              ;
+;             |a_gray2bin_rgb:ws_dgrp_gray2bin| ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|a_gray2bin_rgb:ws_dgrp_gray2bin                  ;              ;
+;             |a_graycounter_k5c:wrptr_g1p|     ; 11 (11)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|a_graycounter_k5c:wrptr_g1p                      ;              ;
+;             |a_graycounter_on6:rdptr_g1p|     ; 11 (11)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|a_graycounter_on6:rdptr_g1p                      ;              ;
+;             |alt_synch_pipe_06d:rs_dgwp|      ; 0 (0)             ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|alt_synch_pipe_06d:rs_dgwp                       ;              ;
+;                |dffpipe_vu8:dffpipe12|        ; 0 (0)             ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|alt_synch_pipe_06d:rs_dgwp|dffpipe_vu8:dffpipe12 ;              ;
+;             |alt_synch_pipe_16d:ws_dgrp|      ; 0 (0)             ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|alt_synch_pipe_16d:ws_dgrp                       ;              ;
+;                |dffpipe_0v8:dffpipe16|        ; 0 (0)             ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|alt_synch_pipe_16d:ws_dgrp|dffpipe_0v8:dffpipe16 ;              ;
+;             |altsyncram_nou:fifo_ram|         ; 0 (0)             ; 0 (0)        ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|altsyncram_nou:fifo_ram                          ;              ;
+;             |cmpr_c66:rdempty_eq_comp|        ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|cmpr_c66:rdempty_eq_comp                         ;              ;
+;             |cmpr_c66:wrfull_eq_comp|         ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|cmpr_c66:wrfull_eq_comp                          ;              ;
+;             |dffpipe_uu8:ws_brp|              ; 0 (0)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|dffpipe_uu8:ws_brp                               ;              ;
+;             |dffpipe_uu8:ws_bwp|              ; 0 (0)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|dffpipe_uu8:ws_bwp                               ;              ;
++-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                           ;
++--------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                                   ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++--------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|altsyncram_nou:fifo_ram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 8            ; 32           ; 8            ; 256  ; None ;
++--------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                ;
++--------+--------------+---------+--------------+--------------+------------------------------+---------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance              ; IP Include File                       ;
++--------+--------------+---------+--------------+--------------+------------------------------+---------------------------------------+
+; Altera ; FIFO         ; 11.0    ; N/A          ; N/A          ; |TS_CONTROL|FIFO_2clk:Buffer ; C:/Users/LCG/Desktop/FPGA/FIFO_2clk.v ;
++--------+--------------+---------+--------------+--------------+------------------------------+---------------------------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------+
+; State Machine - |TS_CONTROL|state                                                                                     ;
++---------------+--------------+-----------+---------------+---------------+---------------+--------------+-------------+
+; Name          ; state.S_ld_W ; state.S_W ; state.S_ldDIN ; state.S_2fram ; state.S_error ; state.S_init ; state.S_rst ;
++---------------+--------------+-----------+---------------+---------------+---------------+--------------+-------------+
+; state.S_rst   ; 0            ; 0         ; 0             ; 0             ; 0             ; 0            ; 0           ;
+; state.S_init  ; 0            ; 0         ; 0             ; 0             ; 0             ; 1            ; 1           ;
+; state.S_error ; 0            ; 0         ; 0             ; 0             ; 1             ; 0            ; 1           ;
+; state.S_2fram ; 0            ; 0         ; 0             ; 1             ; 0             ; 0            ; 1           ;
+; state.S_ldDIN ; 0            ; 0         ; 1             ; 0             ; 0             ; 0            ; 1           ;
+; state.S_W     ; 0            ; 1         ; 0             ; 0             ; 0             ; 0            ; 1           ;
+; state.S_ld_W  ; 1            ; 0         ; 0             ; 0             ; 0             ; 0            ; 1           ;
++---------------+--------------+-----------+---------------+---------------+---------------+--------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                     ;
++---------------------------------------------------------------------------------------------------+--------------------+
+; Register name                                                                                     ; Reason for Removal ;
++---------------------------------------------------------------------------------------------------+--------------------+
+; FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|dffpipe_uu8:ws_bwp|dffe15a[5] ; Lost fanout        ;
+; FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|dffpipe_uu8:ws_brp|dffe15a[5] ; Lost fanout        ;
+; state~2                                                                                           ; Lost fanout        ;
+; state~3                                                                                           ; Lost fanout        ;
+; state~4                                                                                           ; Lost fanout        ;
+; Total Number of Removed Registers = 5                                                             ;                    ;
++---------------------------------------------------------------------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 106   ;
+; Number of registers using Synchronous Clear  ; 4     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 28    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                         ;
++------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                          ; Fan out ;
++------------------------------------------------------------------------------------------------------------+---------+
+; FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|a_graycounter_on6:rdptr_g1p|counter5a0 ; 7       ;
+; FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|a_graycounter_k5c:wrptr_g1p|counter8a0 ; 6       ;
+; FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|a_graycounter_on6:rdptr_g1p|parity6    ; 4       ;
+; FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|a_graycounter_k5c:wrptr_g1p|parity9    ; 4       ;
+; Total number of inverted registers = 4                                                                     ;         ;
++------------------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+--------------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered         ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+--------------------+----------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |TS_CONTROL|out[0] ;                            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; |TS_CONTROL|i[0]   ;                            ;
++--------------------+-----------+---------------+----------------------+------------------------+--------------------+----------------------------+
+
+
++-----------------------------------------------------------------+
+; Source assignments for FIFO_2clk:Buffer|dcfifo:dcfifo_component ;
++---------------------------------+-------+------+----------------+
+; Assignment                      ; Value ; From ; To             ;
++---------------------------------+-------+------+----------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -              ;
++---------------------------------+-------+------+----------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Source assignments for FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated ;
++---------------------------------------+-------+------+-------------------------------------+
+; Assignment                            ; Value ; From ; To                                  ;
++---------------------------------------+-------+------+-------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION       ; OFF   ; -    ; -                                   ;
+; REMOVE_DUPLICATE_REGISTERS            ; OFF   ; -    ; -                                   ;
+; SYNCHRONIZER_IDENTIFICATION           ; OFF   ; -    ; -                                   ;
+; SYNCHRONIZATION_REGISTER_CHAIN_LENGTH ; 2     ; -    ; -                                   ;
+; POWER_UP_LEVEL                        ; LOW   ; -    ; wrptr_g                             ;
++---------------------------------------+-------+------+-------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|a_graycounter_on6:rdptr_g1p ;
++----------------+-------+------+----------------------------------------------------------------------------------------+
+; Assignment     ; Value ; From ; To                                                                                     ;
++----------------+-------+------+----------------------------------------------------------------------------------------+
+; POWER_UP_LEVEL ; HIGH  ; -    ; counter5a0                                                                             ;
+; POWER_UP_LEVEL ; HIGH  ; -    ; parity6                                                                                ;
++----------------+-------+------+----------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|a_graycounter_k5c:wrptr_g1p ;
++----------------+-------+------+----------------------------------------------------------------------------------------+
+; Assignment     ; Value ; From ; To                                                                                     ;
++----------------+-------+------+----------------------------------------------------------------------------------------+
+; POWER_UP_LEVEL ; HIGH  ; -    ; counter8a0                                                                             ;
+; POWER_UP_LEVEL ; HIGH  ; -    ; parity9                                                                                ;
++----------------+-------+------+----------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Source assignments for FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|altsyncram_nou:fifo_ram ;
++---------------------------------+--------------------+------+------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                   ;
++---------------------------------+--------------------+------+------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                    ;
++---------------------------------+--------------------+------+------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Source assignments for FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|alt_synch_pipe_06d:rs_dgwp ;
++-----------------------------+------------------------+------+---------------------------------------------------------+
+; Assignment                  ; Value                  ; From ; To                                                      ;
++-----------------------------+------------------------+------+---------------------------------------------------------+
+; X_ON_VIOLATION_OPTION       ; OFF                    ; -    ; -                                                       ;
+; SYNCHRONIZER_IDENTIFICATION ; FORCED_IF_ASYNCHRONOUS ; -    ; -                                                       ;
++-----------------------------+------------------------+------+---------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|alt_synch_pipe_06d:rs_dgwp|dffpipe_vu8:dffpipe12 ;
++---------------------------------+-------+------+--------------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                         ;
++---------------------------------+-------+------+--------------------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                          ;
++---------------------------------+-------+------+--------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Source assignments for FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|dffpipe_uu8:ws_brp ;
++---------------------------------+-------+------+--------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                           ;
++---------------------------------+-------+------+--------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                            ;
++---------------------------------+-------+------+--------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Source assignments for FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|dffpipe_uu8:ws_bwp ;
++---------------------------------+-------+------+--------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                           ;
++---------------------------------+-------+------+--------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                            ;
++---------------------------------+-------+------+--------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Source assignments for FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|alt_synch_pipe_16d:ws_dgrp ;
++-----------------------------+------------------------+------+---------------------------------------------------------+
+; Assignment                  ; Value                  ; From ; To                                                      ;
++-----------------------------+------------------------+------+---------------------------------------------------------+
+; X_ON_VIOLATION_OPTION       ; OFF                    ; -    ; -                                                       ;
+; SYNCHRONIZER_IDENTIFICATION ; FORCED_IF_ASYNCHRONOUS ; -    ; -                                                       ;
++-----------------------------+------------------------+------+---------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|alt_synch_pipe_16d:ws_dgrp|dffpipe_0v8:dffpipe16 ;
++---------------------------------+-------+------+--------------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                         ;
++---------------------------------+-------+------+--------------------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                          ;
++---------------------------------+-------+------+--------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |TS_CONTROL ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; word_size      ; 8     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: FIFO_2clk:Buffer|dcfifo:dcfifo_component ;
++-------------------------+--------------+----------------------------------------------+
+; Parameter Name          ; Value        ; Type                                         ;
++-------------------------+--------------+----------------------------------------------+
+; WIDTH_BYTEENA           ; 1            ; Untyped                                      ;
+; AUTO_CARRY_CHAINS       ; ON           ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS    ; OFF          ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS     ; ON           ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS  ; OFF          ; IGNORE_CASCADE                               ;
+; LPM_WIDTH               ; 8            ; Signed Integer                               ;
+; LPM_NUMWORDS            ; 32           ; Signed Integer                               ;
+; LPM_WIDTHU              ; 5            ; Signed Integer                               ;
+; LPM_SHOWAHEAD           ; OFF          ; Untyped                                      ;
+; UNDERFLOW_CHECKING      ; ON           ; Untyped                                      ;
+; OVERFLOW_CHECKING       ; ON           ; Untyped                                      ;
+; USE_EAB                 ; ON           ; Untyped                                      ;
+; ADD_RAM_OUTPUT_REGISTER ; OFF          ; Untyped                                      ;
+; DELAY_RDUSEDW           ; 1            ; Untyped                                      ;
+; DELAY_WRUSEDW           ; 1            ; Untyped                                      ;
+; RDSYNC_DELAYPIPE        ; 4            ; Signed Integer                               ;
+; WRSYNC_DELAYPIPE        ; 4            ; Signed Integer                               ;
+; CLOCKS_ARE_SYNCHRONIZED ; FALSE        ; Untyped                                      ;
+; MAXIMIZE_SPEED          ; 5            ; Untyped                                      ;
+; DEVICE_FAMILY           ; Cyclone IV E ; Untyped                                      ;
+; ADD_USEDW_MSB_BIT       ; OFF          ; Untyped                                      ;
+; WRITE_ACLR_SYNCH        ; OFF          ; Untyped                                      ;
+; CBXI_PARAMETER          ; dcfifo_5ag1  ; Untyped                                      ;
++-------------------------+--------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; dcfifo Parameter Settings by Entity Instance                          ;
++----------------------------+------------------------------------------+
+; Name                       ; Value                                    ;
++----------------------------+------------------------------------------+
+; Number of entity instances ; 1                                        ;
+; Entity Instance            ; FIFO_2clk:Buffer|dcfifo:dcfifo_component ;
+;     -- FIFO Type           ; Dual Clock                               ;
+;     -- LPM_WIDTH           ; 8                                        ;
+;     -- LPM_NUMWORDS        ; 32                                       ;
+;     -- LPM_SHOWAHEAD       ; OFF                                      ;
+;     -- USE_EAB             ; ON                                       ;
++----------------------------+------------------------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "FIFO_2clk:Buffer"         ;
++---------+--------+----------+------------------------+
+; Port    ; Type   ; Severity ; Details                ;
++---------+--------+----------+------------------------+
+; rdempty ; Output ; Info     ; Explicitly unconnected ;
+; wrfull  ; Output ; Info     ; Explicitly unconnected ;
++---------+--------+----------+------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Full Version
+    Info: Processing started: Fri May 03 23:26:22 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TS_CONTROL -c TS_CONTROL
+Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info: Found 1 design units, including 1 entities, in source file fifo_2clk.v
+    Info: Found entity 1: FIFO_2clk
+Warning: Using design file ts_control.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: TS_CONTROL
+Warning (10236): Verilog HDL Implicit Net warning at ts_control.v(45): created implicit net for "fram_head"
+Warning (10236): Verilog HDL Implicit Net warning at ts_control.v(46): created implicit net for "fram_3"
+Warning (10236): Verilog HDL Implicit Net warning at ts_control.v(47): created implicit net for "fram_ee"
+Warning (10236): Verilog HDL Implicit Net warning at ts_control.v(48): created implicit net for "ld"
+Warning (10236): Verilog HDL Implicit Net warning at ts_control.v(49): created implicit net for "rd_buffer"
+Warning (10222): Verilog HDL Parameter Declaration warning at ts_control.v(37): Parameter Declaration in module "TS_CONTROL" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Info: Elaborating entity "TS_CONTROL" for the top level hierarchy
+Info: Elaborating entity "FIFO_2clk" for hierarchy "FIFO_2clk:Buffer"
+Info: Elaborating entity "dcfifo" for hierarchy "FIFO_2clk:Buffer|dcfifo:dcfifo_component"
+Info: Elaborated megafunction instantiation "FIFO_2clk:Buffer|dcfifo:dcfifo_component"
+Info: Instantiated megafunction "FIFO_2clk:Buffer|dcfifo:dcfifo_component" with the following parameter:
+    Info: Parameter "intended_device_family" = "Cyclone IV E"
+    Info: Parameter "lpm_numwords" = "32"
+    Info: Parameter "lpm_showahead" = "OFF"
+    Info: Parameter "lpm_type" = "dcfifo"
+    Info: Parameter "lpm_width" = "8"
+    Info: Parameter "lpm_widthu" = "5"
+    Info: Parameter "overflow_checking" = "ON"
+    Info: Parameter "rdsync_delaypipe" = "4"
+    Info: Parameter "underflow_checking" = "ON"
+    Info: Parameter "use_eab" = "ON"
+    Info: Parameter "wrsync_delaypipe" = "4"
+Info: Found 1 design units, including 1 entities, in source file db/dcfifo_5ag1.tdf
+    Info: Found entity 1: dcfifo_5ag1
+Info: Elaborating entity "dcfifo_5ag1" for hierarchy "FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated"
+Info: Found 1 design units, including 1 entities, in source file db/a_gray2bin_rgb.tdf
+    Info: Found entity 1: a_gray2bin_rgb
+Info: Elaborating entity "a_gray2bin_rgb" for hierarchy "FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|a_gray2bin_rgb:wrptr_g_gray2bin"
+Info: Found 1 design units, including 1 entities, in source file db/a_graycounter_on6.tdf
+    Info: Found entity 1: a_graycounter_on6
+Info: Elaborating entity "a_graycounter_on6" for hierarchy "FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|a_graycounter_on6:rdptr_g1p"
+Info: Found 1 design units, including 1 entities, in source file db/a_graycounter_k5c.tdf
+    Info: Found entity 1: a_graycounter_k5c
+Info: Elaborating entity "a_graycounter_k5c" for hierarchy "FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|a_graycounter_k5c:wrptr_g1p"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_nou.tdf
+    Info: Found entity 1: altsyncram_nou
+Info: Elaborating entity "altsyncram_nou" for hierarchy "FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|altsyncram_nou:fifo_ram"
+Info: Found 1 design units, including 1 entities, in source file db/alt_synch_pipe_06d.tdf
+    Info: Found entity 1: alt_synch_pipe_06d
+Info: Elaborating entity "alt_synch_pipe_06d" for hierarchy "FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|alt_synch_pipe_06d:rs_dgwp"
+Info: Found 1 design units, including 1 entities, in source file db/dffpipe_vu8.tdf
+    Info: Found entity 1: dffpipe_vu8
+Info: Elaborating entity "dffpipe_vu8" for hierarchy "FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|alt_synch_pipe_06d:rs_dgwp|dffpipe_vu8:dffpipe12"
+Info: Found 1 design units, including 1 entities, in source file db/dffpipe_uu8.tdf
+    Info: Found entity 1: dffpipe_uu8
+Info: Elaborating entity "dffpipe_uu8" for hierarchy "FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|dffpipe_uu8:ws_brp"
+Info: Found 1 design units, including 1 entities, in source file db/alt_synch_pipe_16d.tdf
+    Info: Found entity 1: alt_synch_pipe_16d
+Info: Elaborating entity "alt_synch_pipe_16d" for hierarchy "FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|alt_synch_pipe_16d:ws_dgrp"
+Info: Found 1 design units, including 1 entities, in source file db/dffpipe_0v8.tdf
+    Info: Found entity 1: dffpipe_0v8
+Info: Elaborating entity "dffpipe_0v8" for hierarchy "FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|alt_synch_pipe_16d:ws_dgrp|dffpipe_0v8:dffpipe16"
+Info: Found 1 design units, including 1 entities, in source file db/cmpr_c66.tdf
+    Info: Found entity 1: cmpr_c66
+Info: Elaborating entity "cmpr_c66" for hierarchy "FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|cmpr_c66:rdempty_eq_comp"
+Info: Timing-Driven Synthesis is running
+Info: 5 registers lost all their fanouts during netlist optimizations. The first 5 are displayed below.
+    Info: Register "FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|dffpipe_uu8:ws_bwp|dffe15a[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|dffpipe_uu8:ws_brp|dffe15a[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "state~2" lost all its fanouts during netlist optimizations.
+    Info: Register "state~3" lost all its fanouts during netlist optimizations.
+    Info: Register "state~4" lost all its fanouts during netlist optimizations.
+Info: Generating hard_block partition "hard_block:auto_generated_inst"
+Info: Implemented 184 device resources after synthesis - the final resource count might be different
+    Info: Implemented 21 input pins
+    Info: Implemented 8 output pins
+    Info: Implemented 147 logic cells
+    Info: Implemented 8 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 425 megabytes
+    Info: Processing ended: Fri May 03 23:26:27 2019
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:04
+
+

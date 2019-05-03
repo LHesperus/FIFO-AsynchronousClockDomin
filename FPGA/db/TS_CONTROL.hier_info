@@ -1,0 +1,443 @@
+|TS_CONTROL
+TS_IN_in[0] => TS_IN[0].DATAIN
+TS_IN_in[1] => TS_IN[1].DATAIN
+TS_IN_in[2] => TS_IN[2].DATAIN
+TS_IN_in[3] => TS_IN[3].DATAIN
+TS_IN_in[4] => TS_IN[4].DATAIN
+TS_IN_in[5] => TS_IN[5].DATAIN
+TS_IN_in[6] => TS_IN[6].DATAIN
+TS_IN_in[7] => TS_IN[7].DATAIN
+DIN_in[0] => DIN[0].DATAIN
+DIN_in[1] => DIN[1].DATAIN
+DIN_in[2] => DIN[2].DATAIN
+DIN_in[3] => DIN[3].DATAIN
+DIN_in[4] => DIN[4].DATAIN
+DIN_in[5] => DIN[5].DATAIN
+DIN_in[6] => DIN[6].DATAIN
+DIN_in[7] => DIN[7].DATAIN
+CLK => CLK.IN1
+SYNC => ld_TS.OUTPUTSELECT
+SYNC => next_state.OUTPUTSELECT
+SYNC => Selector1.IN2
+RESET => state.OUTPUTSELECT
+RESET => state.OUTPUTSELECT
+RESET => state.OUTPUTSELECT
+RESET => state.OUTPUTSELECT
+RESET => state.OUTPUTSELECT
+RESET => state.OUTPUTSELECT
+RESET => state.OUTPUTSELECT
+RESET => i.OUTPUTSELECT
+RESET => i.OUTPUTSELECT
+RESET => i.OUTPUTSELECT
+RESET => i.OUTPUTSELECT
+RESET => rdreq.OUTPUTSELECT
+RESET => Selector0.IN3
+RESET => Selector5.IN1
+RESET => Selector1.IN1
+RESET => out[2].ENA
+RESET => out[1].ENA
+RESET => out[0].ENA
+RESET => out[3].ENA
+RESET => out[4].ENA
+RESET => out[5].ENA
+RESET => out[6].ENA
+RESET => out[7].ENA
+CLK_W => DIN[0].CLK
+CLK_W => DIN[1].CLK
+CLK_W => DIN[2].CLK
+CLK_W => DIN[3].CLK
+CLK_W => DIN[4].CLK
+CLK_W => DIN[5].CLK
+CLK_W => DIN[6].CLK
+CLK_W => DIN[7].CLK
+CLK_W => _.IN1
+EN => EN.IN1
+
+
+|TS_CONTROL|FIFO_2clk:Buffer
+data[0] => data[0].IN1
+data[1] => data[1].IN1
+data[2] => data[2].IN1
+data[3] => data[3].IN1
+data[4] => data[4].IN1
+data[5] => data[5].IN1
+data[6] => data[6].IN1
+data[7] => data[7].IN1
+rdclk => rdclk.IN1
+rdreq => rdreq.IN1
+wrclk => wrclk.IN1
+wrreq => wrreq.IN1
+
+
+|TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component
+data[0] => dcfifo_5ag1:auto_generated.data[0]
+data[1] => dcfifo_5ag1:auto_generated.data[1]
+data[2] => dcfifo_5ag1:auto_generated.data[2]
+data[3] => dcfifo_5ag1:auto_generated.data[3]
+data[4] => dcfifo_5ag1:auto_generated.data[4]
+data[5] => dcfifo_5ag1:auto_generated.data[5]
+data[6] => dcfifo_5ag1:auto_generated.data[6]
+data[7] => dcfifo_5ag1:auto_generated.data[7]
+rdclk => dcfifo_5ag1:auto_generated.rdclk
+rdreq => dcfifo_5ag1:auto_generated.rdreq
+wrclk => dcfifo_5ag1:auto_generated.wrclk
+wrreq => dcfifo_5ag1:auto_generated.wrreq
+aclr => ~NO_FANOUT~
+
+
+|TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated
+data[0] => altsyncram_nou:fifo_ram.data_a[0]
+data[1] => altsyncram_nou:fifo_ram.data_a[1]
+data[2] => altsyncram_nou:fifo_ram.data_a[2]
+data[3] => altsyncram_nou:fifo_ram.data_a[3]
+data[4] => altsyncram_nou:fifo_ram.data_a[4]
+data[5] => altsyncram_nou:fifo_ram.data_a[5]
+data[6] => altsyncram_nou:fifo_ram.data_a[6]
+data[7] => altsyncram_nou:fifo_ram.data_a[7]
+rdclk => a_graycounter_on6:rdptr_g1p.clock
+rdclk => altsyncram_nou:fifo_ram.clock1
+rdclk => alt_synch_pipe_06d:rs_dgwp.clock
+rdclk => rdptr_g[5].CLK
+rdclk => rdptr_g[4].CLK
+rdclk => rdptr_g[3].CLK
+rdclk => rdptr_g[2].CLK
+rdclk => rdptr_g[1].CLK
+rdclk => rdptr_g[0].CLK
+rdreq => valid_rdreq.IN0
+wrclk => a_graycounter_k5c:wrptr_g1p.clock
+wrclk => altsyncram_nou:fifo_ram.clock0
+wrclk => dffpipe_uu8:ws_brp.clock
+wrclk => dffpipe_uu8:ws_bwp.clock
+wrclk => alt_synch_pipe_16d:ws_dgrp.clock
+wrclk => delayed_wrptr_g[5].CLK
+wrclk => delayed_wrptr_g[4].CLK
+wrclk => delayed_wrptr_g[3].CLK
+wrclk => delayed_wrptr_g[2].CLK
+wrclk => delayed_wrptr_g[1].CLK
+wrclk => delayed_wrptr_g[0].CLK
+wrclk => wrptr_g[5].CLK
+wrclk => wrptr_g[4].CLK
+wrclk => wrptr_g[3].CLK
+wrclk => wrptr_g[2].CLK
+wrclk => wrptr_g[1].CLK
+wrclk => wrptr_g[0].CLK
+wrreq => valid_wrreq.IN0
+
+
+|TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|a_gray2bin_rgb:wrptr_g_gray2bin
+gray[0] => xor0.IN0
+gray[1] => xor1.IN0
+gray[2] => xor2.IN0
+gray[3] => xor3.IN0
+gray[4] => xor4.IN1
+gray[5] => bin[5].DATAIN
+gray[5] => xor4.IN0
+
+
+|TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|a_gray2bin_rgb:ws_dgrp_gray2bin
+gray[0] => xor0.IN0
+gray[1] => xor1.IN0
+gray[2] => xor2.IN0
+gray[3] => xor3.IN0
+gray[4] => xor4.IN1
+gray[5] => bin[5].DATAIN
+gray[5] => xor4.IN0
+
+
+|TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|a_graycounter_on6:rdptr_g1p
+clock => counter5a0.CLK
+clock => counter5a1.CLK
+clock => counter5a2.CLK
+clock => counter5a3.CLK
+clock => counter5a4.CLK
+clock => counter5a5.CLK
+clock => parity6.CLK
+clock => sub_parity7a[1].CLK
+clock => sub_parity7a[0].CLK
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => cntr_cout[0].IN0
+cnt_en => parity_cout.IN1
+
+
+|TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|a_graycounter_k5c:wrptr_g1p
+clock => counter8a0.CLK
+clock => counter8a1.CLK
+clock => counter8a2.CLK
+clock => counter8a3.CLK
+clock => counter8a4.CLK
+clock => counter8a5.CLK
+clock => parity9.CLK
+clock => sub_parity10a[1].CLK
+clock => sub_parity10a[0].CLK
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => _.IN0
+cnt_en => cntr_cout[0].IN0
+cnt_en => parity_cout.IN1
+
+
+|TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|altsyncram_nou:fifo_ram
+address_a[0] => ram_block11a0.PORTAADDR
+address_a[0] => ram_block11a1.PORTAADDR
+address_a[0] => ram_block11a2.PORTAADDR
+address_a[0] => ram_block11a3.PORTAADDR
+address_a[0] => ram_block11a4.PORTAADDR
+address_a[0] => ram_block11a5.PORTAADDR
+address_a[0] => ram_block11a6.PORTAADDR
+address_a[0] => ram_block11a7.PORTAADDR
+address_a[1] => ram_block11a0.PORTAADDR1
+address_a[1] => ram_block11a1.PORTAADDR1
+address_a[1] => ram_block11a2.PORTAADDR1
+address_a[1] => ram_block11a3.PORTAADDR1
+address_a[1] => ram_block11a4.PORTAADDR1
+address_a[1] => ram_block11a5.PORTAADDR1
+address_a[1] => ram_block11a6.PORTAADDR1
+address_a[1] => ram_block11a7.PORTAADDR1
+address_a[2] => ram_block11a0.PORTAADDR2
+address_a[2] => ram_block11a1.PORTAADDR2
+address_a[2] => ram_block11a2.PORTAADDR2
+address_a[2] => ram_block11a3.PORTAADDR2
+address_a[2] => ram_block11a4.PORTAADDR2
+address_a[2] => ram_block11a5.PORTAADDR2
+address_a[2] => ram_block11a6.PORTAADDR2
+address_a[2] => ram_block11a7.PORTAADDR2
+address_a[3] => ram_block11a0.PORTAADDR3
+address_a[3] => ram_block11a1.PORTAADDR3
+address_a[3] => ram_block11a2.PORTAADDR3
+address_a[3] => ram_block11a3.PORTAADDR3
+address_a[3] => ram_block11a4.PORTAADDR3
+address_a[3] => ram_block11a5.PORTAADDR3
+address_a[3] => ram_block11a6.PORTAADDR3
+address_a[3] => ram_block11a7.PORTAADDR3
+address_a[4] => ram_block11a0.PORTAADDR4
+address_a[4] => ram_block11a1.PORTAADDR4
+address_a[4] => ram_block11a2.PORTAADDR4
+address_a[4] => ram_block11a3.PORTAADDR4
+address_a[4] => ram_block11a4.PORTAADDR4
+address_a[4] => ram_block11a5.PORTAADDR4
+address_a[4] => ram_block11a6.PORTAADDR4
+address_a[4] => ram_block11a7.PORTAADDR4
+address_b[0] => ram_block11a0.PORTBADDR
+address_b[0] => ram_block11a1.PORTBADDR
+address_b[0] => ram_block11a2.PORTBADDR
+address_b[0] => ram_block11a3.PORTBADDR
+address_b[0] => ram_block11a4.PORTBADDR
+address_b[0] => ram_block11a5.PORTBADDR
+address_b[0] => ram_block11a6.PORTBADDR
+address_b[0] => ram_block11a7.PORTBADDR
+address_b[1] => ram_block11a0.PORTBADDR1
+address_b[1] => ram_block11a1.PORTBADDR1
+address_b[1] => ram_block11a2.PORTBADDR1
+address_b[1] => ram_block11a3.PORTBADDR1
+address_b[1] => ram_block11a4.PORTBADDR1
+address_b[1] => ram_block11a5.PORTBADDR1
+address_b[1] => ram_block11a6.PORTBADDR1
+address_b[1] => ram_block11a7.PORTBADDR1
+address_b[2] => ram_block11a0.PORTBADDR2
+address_b[2] => ram_block11a1.PORTBADDR2
+address_b[2] => ram_block11a2.PORTBADDR2
+address_b[2] => ram_block11a3.PORTBADDR2
+address_b[2] => ram_block11a4.PORTBADDR2
+address_b[2] => ram_block11a5.PORTBADDR2
+address_b[2] => ram_block11a6.PORTBADDR2
+address_b[2] => ram_block11a7.PORTBADDR2
+address_b[3] => ram_block11a0.PORTBADDR3
+address_b[3] => ram_block11a1.PORTBADDR3
+address_b[3] => ram_block11a2.PORTBADDR3
+address_b[3] => ram_block11a3.PORTBADDR3
+address_b[3] => ram_block11a4.PORTBADDR3
+address_b[3] => ram_block11a5.PORTBADDR3
+address_b[3] => ram_block11a6.PORTBADDR3
+address_b[3] => ram_block11a7.PORTBADDR3
+address_b[4] => ram_block11a0.PORTBADDR4
+address_b[4] => ram_block11a1.PORTBADDR4
+address_b[4] => ram_block11a2.PORTBADDR4
+address_b[4] => ram_block11a3.PORTBADDR4
+address_b[4] => ram_block11a4.PORTBADDR4
+address_b[4] => ram_block11a5.PORTBADDR4
+address_b[4] => ram_block11a6.PORTBADDR4
+address_b[4] => ram_block11a7.PORTBADDR4
+addressstall_b => ram_block11a0.PORTBADDRSTALL
+addressstall_b => ram_block11a1.PORTBADDRSTALL
+addressstall_b => ram_block11a2.PORTBADDRSTALL
+addressstall_b => ram_block11a3.PORTBADDRSTALL
+addressstall_b => ram_block11a4.PORTBADDRSTALL
+addressstall_b => ram_block11a5.PORTBADDRSTALL
+addressstall_b => ram_block11a6.PORTBADDRSTALL
+addressstall_b => ram_block11a7.PORTBADDRSTALL
+clock0 => ram_block11a0.CLK0
+clock0 => ram_block11a1.CLK0
+clock0 => ram_block11a2.CLK0
+clock0 => ram_block11a3.CLK0
+clock0 => ram_block11a4.CLK0
+clock0 => ram_block11a5.CLK0
+clock0 => ram_block11a6.CLK0
+clock0 => ram_block11a7.CLK0
+clock1 => ram_block11a0.CLK1
+clock1 => ram_block11a1.CLK1
+clock1 => ram_block11a2.CLK1
+clock1 => ram_block11a3.CLK1
+clock1 => ram_block11a4.CLK1
+clock1 => ram_block11a5.CLK1
+clock1 => ram_block11a6.CLK1
+clock1 => ram_block11a7.CLK1
+clocken1 => ram_block11a0.ENA1
+clocken1 => ram_block11a1.ENA1
+clocken1 => ram_block11a2.ENA1
+clocken1 => ram_block11a3.ENA1
+clocken1 => ram_block11a4.ENA1
+clocken1 => ram_block11a5.ENA1
+clocken1 => ram_block11a6.ENA1
+clocken1 => ram_block11a7.ENA1
+data_a[0] => ram_block11a0.PORTADATAIN
+data_a[1] => ram_block11a1.PORTADATAIN
+data_a[2] => ram_block11a2.PORTADATAIN
+data_a[3] => ram_block11a3.PORTADATAIN
+data_a[4] => ram_block11a4.PORTADATAIN
+data_a[5] => ram_block11a5.PORTADATAIN
+data_a[6] => ram_block11a6.PORTADATAIN
+data_a[7] => ram_block11a7.PORTADATAIN
+wren_a => ram_block11a0.PORTAWE
+wren_a => ram_block11a1.PORTAWE
+wren_a => ram_block11a2.PORTAWE
+wren_a => ram_block11a3.PORTAWE
+wren_a => ram_block11a4.PORTAWE
+wren_a => ram_block11a5.PORTAWE
+wren_a => ram_block11a6.PORTAWE
+wren_a => ram_block11a7.PORTAWE
+
+
+|TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|alt_synch_pipe_06d:rs_dgwp
+clock => dffpipe_vu8:dffpipe12.clock
+d[0] => dffpipe_vu8:dffpipe12.d[0]
+d[1] => dffpipe_vu8:dffpipe12.d[1]
+d[2] => dffpipe_vu8:dffpipe12.d[2]
+d[3] => dffpipe_vu8:dffpipe12.d[3]
+d[4] => dffpipe_vu8:dffpipe12.d[4]
+d[5] => dffpipe_vu8:dffpipe12.d[5]
+
+
+|TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|alt_synch_pipe_06d:rs_dgwp|dffpipe_vu8:dffpipe12
+clock => dffe13a[5].CLK
+clock => dffe13a[4].CLK
+clock => dffe13a[3].CLK
+clock => dffe13a[2].CLK
+clock => dffe13a[1].CLK
+clock => dffe13a[0].CLK
+clock => dffe14a[5].CLK
+clock => dffe14a[4].CLK
+clock => dffe14a[3].CLK
+clock => dffe14a[2].CLK
+clock => dffe14a[1].CLK
+clock => dffe14a[0].CLK
+d[0] => dffe13a[0].IN0
+d[1] => dffe13a[1].IN0
+d[2] => dffe13a[2].IN0
+d[3] => dffe13a[3].IN0
+d[4] => dffe13a[4].IN0
+d[5] => dffe13a[5].IN0
+
+
+|TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|dffpipe_uu8:ws_brp
+clock => dffe15a[5].CLK
+clock => dffe15a[4].CLK
+clock => dffe15a[3].CLK
+clock => dffe15a[2].CLK
+clock => dffe15a[1].CLK
+clock => dffe15a[0].CLK
+d[0] => dffe15a[0].IN0
+d[1] => dffe15a[1].IN0
+d[2] => dffe15a[2].IN0
+d[3] => dffe15a[3].IN0
+d[4] => dffe15a[4].IN0
+d[5] => dffe15a[5].IN0
+
+
+|TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|dffpipe_uu8:ws_bwp
+clock => dffe15a[5].CLK
+clock => dffe15a[4].CLK
+clock => dffe15a[3].CLK
+clock => dffe15a[2].CLK
+clock => dffe15a[1].CLK
+clock => dffe15a[0].CLK
+d[0] => dffe15a[0].IN0
+d[1] => dffe15a[1].IN0
+d[2] => dffe15a[2].IN0
+d[3] => dffe15a[3].IN0
+d[4] => dffe15a[4].IN0
+d[5] => dffe15a[5].IN0
+
+
+|TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|alt_synch_pipe_16d:ws_dgrp
+clock => dffpipe_0v8:dffpipe16.clock
+d[0] => dffpipe_0v8:dffpipe16.d[0]
+d[1] => dffpipe_0v8:dffpipe16.d[1]
+d[2] => dffpipe_0v8:dffpipe16.d[2]
+d[3] => dffpipe_0v8:dffpipe16.d[3]
+d[4] => dffpipe_0v8:dffpipe16.d[4]
+d[5] => dffpipe_0v8:dffpipe16.d[5]
+
+
+|TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|alt_synch_pipe_16d:ws_dgrp|dffpipe_0v8:dffpipe16
+clock => dffe17a[5].CLK
+clock => dffe17a[4].CLK
+clock => dffe17a[3].CLK
+clock => dffe17a[2].CLK
+clock => dffe17a[1].CLK
+clock => dffe17a[0].CLK
+clock => dffe18a[5].CLK
+clock => dffe18a[4].CLK
+clock => dffe18a[3].CLK
+clock => dffe18a[2].CLK
+clock => dffe18a[1].CLK
+clock => dffe18a[0].CLK
+d[0] => dffe17a[0].IN0
+d[1] => dffe17a[1].IN0
+d[2] => dffe17a[2].IN0
+d[3] => dffe17a[3].IN0
+d[4] => dffe17a[4].IN0
+d[5] => dffe17a[5].IN0
+
+
+|TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|cmpr_c66:rdempty_eq_comp
+dataa[0] => data_wire[0].IN0
+dataa[1] => data_wire[0].IN0
+dataa[2] => data_wire[1].IN0
+dataa[3] => data_wire[1].IN0
+dataa[4] => data_wire[2].IN0
+dataa[5] => data_wire[2].IN0
+datab[0] => data_wire[0].IN1
+datab[1] => data_wire[0].IN1
+datab[2] => data_wire[1].IN1
+datab[3] => data_wire[1].IN1
+datab[4] => data_wire[2].IN1
+datab[5] => data_wire[2].IN1
+
+
+|TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component|dcfifo_5ag1:auto_generated|cmpr_c66:wrfull_eq_comp
+dataa[0] => data_wire[0].IN0
+dataa[1] => data_wire[0].IN0
+dataa[2] => data_wire[1].IN0
+dataa[3] => data_wire[1].IN0
+dataa[4] => data_wire[2].IN0
+dataa[5] => data_wire[2].IN0
+datab[0] => data_wire[0].IN1
+datab[1] => data_wire[0].IN1
+datab[2] => data_wire[1].IN1
+datab[3] => data_wire[1].IN1
+datab[4] => data_wire[2].IN1
+datab[5] => data_wire[2].IN1
+
+

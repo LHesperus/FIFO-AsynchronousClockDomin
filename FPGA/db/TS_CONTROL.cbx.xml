@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="TS_CONTROL">
+		<CBX_INST_ENTRY INSTANCE_NAME="|TS_CONTROL|FIFO_2clk:Buffer|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_5ag1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

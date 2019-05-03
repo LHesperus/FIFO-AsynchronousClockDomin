@@ -1,0 +1,10 @@
+
+State Machine - |TS_CONTROL|state
+Name state.S_ld_W state.S_W state.S_ldDIN state.S_2fram state.S_error state.S_init state.S_rst 
+state.S_rst 0 0 0 0 0 0 0 
+state.S_init 0 0 0 0 0 1 1 
+state.S_error 0 0 0 0 1 0 1 
+state.S_2fram 0 0 0 1 0 0 1 
+state.S_ldDIN 0 0 1 0 0 0 1 
+state.S_W 0 1 0 0 0 0 1 
+state.S_ld_W 1 0 0 0 0 0 1 
